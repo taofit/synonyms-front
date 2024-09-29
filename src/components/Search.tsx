@@ -49,7 +49,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSetSynonyms }) => {
       `http://localhost:3000/synonym/${item.name}`
     );
     const data = await response.json();
-    onSetSynonyms(data);
+    if (response.status === 200) {
+      onSetSynonyms(data);
+    } else {
+      onSetSynonyms([]);
+    }
   };
 
   return (
