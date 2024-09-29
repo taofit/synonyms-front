@@ -14,6 +14,7 @@ const NavBar = ({ title }: NavBarProps) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/" active={Boolean(useMatch('/'))}>Home</Nav.Link>
+            <Nav.Link href="/get" active={Boolean(useMatch('/get'))}>Get</Nav.Link>
             <Nav.Link href="/add" active={Boolean(useMatch('/add'))}>Add</Nav.Link>
             <Nav.Link href="/edit" active={Boolean(useMatch('/edit'))}>Edit</Nav.Link>
           </Nav>

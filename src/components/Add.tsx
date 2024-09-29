@@ -39,10 +39,10 @@ const Add = () => {
   };
 
   const SubmitSynonyms = async (synonyms: string[]) => {
-    if (synonyms.some((word) => word.trim() === "")) {
+    if (synonyms.some((word) => word.trim() === "") || synonyms.length < 2) {
       setToast({
         show: true,
-        message: "synonym contains empty word",
+        message: "synonym contains invalid input",
         type: ToastType.WARNING,
       });
       return;
@@ -92,16 +92,23 @@ const Add = () => {
               onChange={(e) => setWord(e.target.value)}
               aria-label="add word"
               aria-describedby="basic-addon2"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  addItem(word);
+                }
+              }}
             />
             <InputGroup id="basic-addon1">
               <Button
+                style={{ borderRadius: "8px" }}
                 variant="dark"
-                className="mt-2"
+                className="mt-2 me-2"
                 onClick={() => addItem(word)}
               >
                 Add
               </Button>
               <Button
+                style={{ borderRadius: "8px" }}
                 variant="dark"
                 className="mt-2"
                 onClick={() => SubmitSynonyms(list)}
@@ -112,6 +119,7 @@ const Add = () => {
           </InputGroup>
         </Col>
       </Row>
+
       <Row>
         <Col md={{ span: 5, offset: 4 }}>
           <ListGroup as="ul">
@@ -126,11 +134,6 @@ const Add = () => {
             ))}
           </ListGroup>
         </Col>
-        <ul>
-          {list.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
       </Row>
       <Notification toast={toast} onSetToast={setToast} />
     </Container>

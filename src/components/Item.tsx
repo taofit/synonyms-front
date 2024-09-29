@@ -52,7 +52,8 @@ const Item: React.FC<ItemProps> = ({
         />
         <ButtonGroup>
           <Button
-            style={{ marginRight: "10px" }}
+            style={{ borderRadius: "8px" }}
+            className="me-2 ms-2"
             variant="light"
             onClick={() => {
               setViewing(true);
@@ -63,6 +64,7 @@ const Item: React.FC<ItemProps> = ({
           </Button>
           <Button
             variant="light"
+            style={{ borderRadius: "8px" }}
             onClick={() => {
               if (viewMode.display === "") {
                 setViewing(false);
@@ -74,7 +76,7 @@ const Item: React.FC<ItemProps> = ({
               }
             }}
           >
-            {viewMode.display === "" ? "Edit" : "Save"}
+            {viewMode.display === "" ? "Edit" : "View"}
           </Button>
         </ButtonGroup>
       </ListGroup.Item>

@@ -3,6 +3,7 @@ import App from "./App.tsx";
 import React from "react";
 import NavBar from "./components/NavBar.tsx";
 import Add from "./components/Add.tsx";
+import Get from "./components/Get.tsx";
 
 const BrowserRouter = createBrowserRouter([
   {
@@ -15,11 +16,11 @@ const BrowserRouter = createBrowserRouter([
     ),
   },
   {
-    path: "search",
+    path: "get",
     element: (
       <div>
         <NavBar title="synonym tool" />
-        <h1>Search Page</h1>
+        <Get />
       </div>
     ),
   },
