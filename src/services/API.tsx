@@ -1,3 +1,5 @@
+const domain = import.meta.env.VITE_APP_DOMAIN;
+
 export const GetRequest = async (url: string) => {
   const body = {
     method: "GET",
@@ -22,7 +24,7 @@ export const PostRequest = async (url: string, payload: object) => {
 };
 
 const fetchCall = async (url: string, body = {}) => {
-  const response = await fetch(url, body);
+  const response = await fetch(`${domain}/${url}`, body);
 
   return await response;
 };

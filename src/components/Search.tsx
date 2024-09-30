@@ -24,7 +24,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSetSynonyms }) => {
   };
 
   const fetchAllWords = async () => {
-    const response = await GetRequest(`http://localhost:3000/synonym/all/word`);
+    const response = await GetRequest(`synonym/all/word`);
     if (response.status === 200) {
       const data = await response.json();
       setSuggestions(data.map((word: string) => ({ id: word, name: word })));
@@ -45,9 +45,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSetSynonyms }) => {
   };
 
   const handleOnSelect = async (item: { id: string; name: string }) => {
-    const response = await GetRequest(
-      `http://localhost:3000/synonym/${item.name}`
-    );
+    const response = await GetRequest(`synonym/${item.name}`);
     const data = await response.json();
     if (response.status === 200) {
       onSetSynonyms(data);

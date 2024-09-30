@@ -10,7 +10,7 @@ const BrowserRouter = createBrowserRouter([
     path: "/",
     element: (
       <React.StrictMode>
-        <NavBar title="synonym tool" />
+        <NavBar />
         <App />
       </React.StrictMode>
     ),
@@ -19,7 +19,7 @@ const BrowserRouter = createBrowserRouter([
     path: "get",
     element: (
       <div>
-        <NavBar title="synonym tool" />
+        <NavBar />
         <Get />
       </div>
     ),
@@ -28,7 +28,7 @@ const BrowserRouter = createBrowserRouter([
     path: "add",
     element: (
       <div>
-        <NavBar title="synonym tool" />
+        <NavBar />
         <Add />
       </div>
     ),
@@ -37,7 +37,7 @@ const BrowserRouter = createBrowserRouter([
     path: "edit",
     element: (
       <div>
-        <NavBar title="synonym tool" />
+        <NavBar />
         <h1>Edit Page</h1>
       </div>
     ),

@@ -49,7 +49,7 @@ const Add = () => {
     }
 
     const response = await PostRequest(
-      "http://localhost:3000/synonym",
+      "synonym",
       synonyms
     );
 
