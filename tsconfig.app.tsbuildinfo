@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/message.tsx","./src/router.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/add.tsx","./src/components/get.tsx","./src/components/item.tsx","./src/components/navbar.tsx","./src/components/notification.tsx","./src/components/search.tsx","./src/services/api.tsx","./src/types/toasttypes.tsx"],"version":"5.6.2"}
