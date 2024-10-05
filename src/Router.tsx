@@ -42,6 +42,6 @@ const BrowserRouter = createBrowserRouter([
       </div>
     ),
   },
-]);
+], {basename: "/synonyms-front"});
 
 export default BrowserRouter;
