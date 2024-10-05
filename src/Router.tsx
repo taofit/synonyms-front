@@ -7,7 +7,7 @@ import Get from "./components/Get.tsx";
 
 const BrowserRouter = createBrowserRouter([
   {
-    path: "/",
+    path: "/synonyms-front/",
     element: (
       <React.StrictMode>
         <NavBar />
@@ -16,7 +16,7 @@ const BrowserRouter = createBrowserRouter([
     ),
   },
   {
-    path: "get",
+    path: "/synonyms-front/get",
     element: (
       <div>
         <NavBar />
@@ -25,7 +25,7 @@ const BrowserRouter = createBrowserRouter([
     ),
   },
   {
-    path: "add",
+    path: "/synonyms-front/add",
     element: (
       <div>
         <NavBar />
@@ -34,7 +34,7 @@ const BrowserRouter = createBrowserRouter([
     ),
   },
   {
-    path: "edit",
+    path: "/synonyms-front/edit",
     element: (
       <div>
         <NavBar />
@@ -42,6 +42,6 @@ const BrowserRouter = createBrowserRouter([
       </div>
     ),
   },
-], {basename: "/synonyms-front"});
+]);
 
 export default BrowserRouter;

@@ -1,5 +1,6 @@
 {
   "name": "synonym-react",
+  "homepage": "https://taofit.github.io/synonyms-front/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
