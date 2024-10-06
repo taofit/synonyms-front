@@ -1,4 +1,4 @@
-import { Col, Container, Row, ListGroup, Form } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import SearchBar from "./Search";
 import { useState } from "react";
 
@@ -9,7 +9,6 @@ const Get = () => {
     <Container>
       <Row
         style={{
-          display: "flex",
           justifyContent: "center",
           alignItems: "center",
           fontSize: "2rem",
@@ -20,27 +19,21 @@ const Get = () => {
       </Row>
       <br />
       <SearchBar onSetSynonyms={setSynonyms} />
-      <Row>
-        <Col md={{ span: 5, offset: 4 }}>
-          <ListGroup as="ul">
-            {synonyms.map((word, index) => (
-              <ListGroup.Item
-                key={index}
-                as="li"
-                variant="dark"
-                action
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  backgroundColor: "lightsteelblue",
-                }}
-              >
-                <Form.Text>{word}</Form.Text>
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
-        </Col>
-      </Row>
+      {synonyms.map((word, index) => (
+        <Row>
+          <Col
+            className="col-md-7 offset-md-5 border pt-1 pb-1"
+            key={index}
+            variant="dark"
+            style={{
+              justifyContent: "space-between",
+              backgroundColor: "lightsteelblue",
+            }}
+          >
+            {word}
+          </Col>
+        </Row>
+      ))}
     </Container>
   );
 };

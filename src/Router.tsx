@@ -4,6 +4,7 @@ import React from "react";
 import NavBar from "./components/NavBar.tsx";
 import Add from "./components/Add.tsx";
 import Get from "./components/Get.tsx";
+import Edit from "./components/Edit.tsx";
 
 const BrowserRouter = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const BrowserRouter = createBrowserRouter([
     element: (
       <div>
         <NavBar />
-        <h1>Edit Page</h1>
+        <Edit />
       </div>
     ),
   },

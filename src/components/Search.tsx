@@ -4,9 +4,10 @@ import { GetRequest } from "../services/API";
 
 interface SearchBarProps {
   onSetSynonyms: (synonyms: string[]) => void;
+  onSetTerm?: (word: string) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSetSynonyms }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSetSynonyms, onSetTerm }) => {
   const [suggestions, setSuggestions] = useState<
     { id: string; name: string }[]
   >([]);
@@ -46,6 +47,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSetSynonyms }) => {
 
   const handleOnSelect = async (item: { id: string; name: string }) => {
     const response = await GetRequest(`synonym/${item.name}`);
+    if (onSetTerm) {
+      onSetTerm(item.name);
+    }
     const data = await response.json();
     if (response.status === 200) {
       onSetSynonyms(data);
@@ -61,7 +65,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSetSynonyms }) => {
         onSearch={handleOnSearch}
         onSelect={handleOnSelect}
         styling={styling}
-        className="col-md-5 offset-md-4"
+        className="col-md-7 offset-md-5"
         placeholder="Search for a word"
       />
     </div>

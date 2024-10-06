@@ -19,7 +19,6 @@ const Notification = ({ toast, onSetToast }: NotificationProps) => {
       <Toast.Header>
         <img src="" className="rounded me-2" alt="" />
         <strong className="me-auto">{toast.type}</strong>
-        {/* <small>11 mins ago</small> */}
       </Toast.Header>
       <Toast.Body>{toast.message}</Toast.Body>
     </Toast>
