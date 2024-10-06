@@ -18,7 +18,9 @@ const Get = () => {
         Search synonyms
       </Row>
       <br />
-      <SearchBar onSetSynonyms={setSynonyms} />
+      <Col md={{ span: 7 }}>
+        <SearchBar onSetSynonyms={setSynonyms} />
+      </Col>
       {synonyms.map((word, index) => (
         <Row>
           <Col
